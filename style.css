@@ -1,0 +1,274 @@
+/*=============
+  Genereal
+===============*/
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    --black-color: #000000;
+    --white-color: #FFFFFF;
+    --primary-color: #292929;
+    --accent-color: #419a5a;
+    --accent-color-gray: #424040;
+}
+  
+body{
+    margin: 0;
+    background-color: var(--primary-color);
+}
+  
+img{
+    max-width: 100%;
+}
+  
+ul{
+    list-style: none;
+    padding: 0;
+    margin: auto 0;
+}
+  
+h1, h2{
+    margin: 0;
+    font-family: 'Londrina Solid', cursive;
+}
+
+
+p{
+    color: var(--white-color);
+    font-size: 1.25rem;
+}
+  
+h2{
+    color: var(--white-color);
+}
+
+.container{
+    max-width: 1300px;
+    margin: auto;
+    padding: 1.5em 2em;
+    background-color: var(--primary-color);
+}
+
+/* animations */
+@-webkit-keyframes glow{
+    from{text-shadow: 1px 2px 3px blue, 3px 2px 1px green, 2px 3px 5px pink, 4px 4px 3px brown}
+    to {text-shadow: 1px 0px 4px green, 2px 2px 4px orange, 2px 4px 2px deeppink, 1px 3px 1px gray}
+}
+
+/*=============
+  Typography
+===============*/
+  
+/* fonts */
+*{
+    font-family: 'RF Dewi', sans-serif;
+}
+  
+.nav-link{
+    color: var(--white-color);
+    font-size: 1.25rem;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    opacity: 0.7;
+}
+
+.div-title{
+    color: var(--white-color);
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.desc-title{
+    font-size: 4.5rem;
+    font-weight: lighter;
+    text-align: center;
+}
+
+.desc-text{
+    font-size: 1.5rem;
+}
+
+.req-title{
+    font-size: 1.5rem;
+    text-decoration: underline;
+}
+
+.req-list{
+    color: var(--white-color);
+    font-size: 1.3rem;
+}
+
+.common-link{
+    font-size: 1.5rem;
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.common-link:hover{
+    opacity: 0.7;
+}
+
+.game-name{
+    font-weight: bold;
+}
+
+.req-main{
+    opacity: 0.6;
+}
+
+.disclaimer{
+    color: var(--white-color);
+    font-size: 1.15rem;
+}
+
+.common-link.small{
+    font-size: 1.15rem;
+}
+
+.score{
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.crit-name{
+    font-size: 1.7rem;
+}
+
+@media screen and (max-width: 800px) {
+    .nav-link{
+      font-size: 1.125rem;
+    }
+}
+
+/*=============
+  Layout
+===============*/
+
+/* navbar */
+.navbar{
+    display: flex;
+    background-color: var(--black-color);
+    justify-content: space-evenly;
+    align-self: baseline;
+    padding: 1em 2em;
+}
+
+.nav-links{
+    display: flex;
+}
+
+.nav-links-item{
+    margin-right: 1em;
+}
+
+/* main */
+.game-desc{
+    border-bottom: 0.2px solid var(--white-color);
+    padding: 1em 0.25em;
+}
+
+.desc-flex{
+    display: flex;
+    padding: 1em 0em;
+}
+
+.desc-flex.rev{
+    flex-direction: row-reverse;
+}
+
+.desc-req, .desc-img, .desc{
+    flex: 50%;
+    margin: 0em 1rem 
+}
+
+.game-name, .desc-title{
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+.desc-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+}
+
+.score{
+    background-color: rgb(2, 161, 2);
+    display: inline-block;
+    padding: 0.5em;
+    border-radius: 15px;
+    margin-right: 0.5em;
+}
+
+.crit-name{
+    display: inline-block;
+}
+
+.desc-review{
+    border: 1px solid var(--white-color);
+    padding: 1em;
+    border-radius: 20px;
+    gap: 1em;
+}
+
+.lego-games-showcase{
+    margin-top: 2em;
+}
+
+.game-card{
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    min-height: 250px;
+}
+
+.games-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1em;
+}
+
+.main-games{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+    gap: 2em;
+    padding: 3em 0em;
+}
+
+
+.game-info{
+    border-top: 2px solid var(--accent-color);
+    background-color: var(--accent-color-gray);
+    color: var(--white-color);
+    padding: 0.5em 0.75em;
+    margin-top: 0;
+    min-height: 500px;
+    z-index: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: translateY(80%);
+    transition: all 0.2s ease-in-out;
+}
+
+.game-card:hover > .game-info{
+    /* transform: translateY(-100px); */
+    transform: translateY(53%);
+}
+
+/* footer */
+.footer{
+    background-color: var(--black-color);
+    padding: 2em 2em;
+}
+
+.disclaimer{
+    text-align: center;
+    margin: 0;
+}
